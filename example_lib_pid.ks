@@ -52,16 +52,16 @@ function display_block {
 set myTh to 0.
 
 lock throttle to myTh.
-lock steering to mySteer.
+//lock steering to mySteer.
 
 set hoverPID to PID_init( 0.05, 0.01, 0.1, 0, 1 ). // Kp, Ki, Kd, min, max control  range vals.
-set steerPID to PID_init( 0.05, 0.01, 0.1, 0, 1 ).
+//set steerPID to PID_init( 0.05, 0.01, 0.1, 0, 1 ).
 
 gear on.  gear off. // on then off because of the weird KSP 'have to hit g twice' bug.
 
 until gear {
   set myTh to PID_seek( hoverPID, seekAlt, alt:radar ).
-  set mySteer to PID_seek( steerPID, seekOrientation, alt:radar ).
+  //set mySteer to PID_seek( steerPID, seekOrientation, alt:radar ).
   display_block(18,13).
   wait 0.001.
 }.
